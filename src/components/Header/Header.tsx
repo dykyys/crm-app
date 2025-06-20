@@ -2,6 +2,7 @@ import Link from 'next/link';
 import css from './Header.module.css';
 import { getCategories } from '@/lib/api';
 import CategoriesMenu from '../CategoriesMenu/CategoriesMenu';
+import AuthNavigation from '../AuthNavigation/AuthNavigation';
 
 const Header = async () => {
   const categories = await getCategories();
@@ -22,6 +23,7 @@ const Header = async () => {
           <li>
             <Link href="/about">About</Link>
           </li>
+          <AuthNavigation />
         </ul>
       </nav>
     </header>

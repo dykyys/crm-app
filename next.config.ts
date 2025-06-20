@@ -4,6 +4,14 @@ const nextConfig: NextConfig = {
   images: {
     domains: ['picsum.photos'],
   },
+  async rewrites() {
+    return [
+      {
+        source: '/api/:path*',
+        destination: 'https://next-docs-api.onrender.com/:path*',
+      },
+    ];
+  },
   async headers() {
     return [
       {
